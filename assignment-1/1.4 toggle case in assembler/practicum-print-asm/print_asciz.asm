@@ -1,3 +1,4 @@
+.txt
 .cpu cortex-m0 			@ de CPU van de Arduino Due
 .align 2				@ zorgt dat adres altijd veelvoud van 2^2 is
 .global print_asciz		@ functienaam extern beschikbaar stellen
