@@ -1,0 +1,57 @@
+000006d4 <_ZN5hwlib18spi_bit_banged_new14write_and_readEjPKhPh>:
+     6d4:	e92d 4ff8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, sl, fp, lr}
+     6d8:	4604      	mov	r4, r0
+     6da:	468a      	mov	sl, r1
+     6dc:	4616      	mov	r6, r2
+     6de:	461f      	mov	r7, r3
+     6e0:	f04f 0800 	mov.w	r8, #0
+     6e4:	f100 0b14 	add.w	fp, r0, #20
+     6e8:	45d0      	cmp	r8, sl
+     6ea:	d033      	beq.n	754 <_ZN5hwlib18spi_bit_banged_new14write_and_readEjPKhPh+0x80>
+     6ec:	2e00      	cmp	r6, #0
+     6ee:	d02f      	beq.n	750 <_ZN5hwlib18spi_bit_banged_new14write_and_readEjPKhPh+0x7c>
+     6f0:	7835      	ldrb	r5, [r6, #0]
+     6f2:	3601      	adds	r6, #1
+     6f4:	f04f 0908 	mov.w	r9, #8
+     6f8:	6920      	ldr	r0, [r4, #16]
+     6fa:	f3c5 11c0 	ubfx	r1, r5, #7, #1
+     6fe:	6803      	ldr	r3, [r0, #0]
+     700:	006d      	lsls	r5, r5, #1
+     702:	681b      	ldr	r3, [r3, #0]
+     704:	4798      	blx	r3
+     706:	6920      	ldr	r0, [r4, #16]
+     708:	6803      	ldr	r3, [r0, #0]
+     70a:	685b      	ldr	r3, [r3, #4]
+     70c:	4798      	blx	r3
+     70e:	68a0      	ldr	r0, [r4, #8]
+     710:	2101      	movs	r1, #1
+     712:	6803      	ldr	r3, [r0, #0]
+     714:	681b      	ldr	r3, [r3, #0]
+     716:	4798      	blx	r3
+     718:	68a0      	ldr	r0, [r4, #8]
+     71a:	6803      	ldr	r3, [r0, #0]
+     71c:	685b      	ldr	r3, [r3, #4]
+     71e:	4798      	blx	r3
+     720:	4658      	mov	r0, fp
+     722:	f7ff feab 	bl	47c <_ZN5hwlib20pin_direct_from_in_t4readEv>
+     726:	b108      	cbz	r0, 72c <_ZN5hwlib18spi_bit_banged_new14write_and_readEjPKhPh+0x58>
+     728:	f045 0501 	orr.w	r5, r5, #1
+     72c:	68a0      	ldr	r0, [r4, #8]
+     72e:	2100      	movs	r1, #0
+     730:	6803      	ldr	r3, [r0, #0]
+     732:	681b      	ldr	r3, [r3, #0]
+     734:	4798      	blx	r3
+     736:	68a0      	ldr	r0, [r4, #8]
+     738:	6803      	ldr	r3, [r0, #0]
+     73a:	685b      	ldr	r3, [r3, #4]
+     73c:	4798      	blx	r3
+     73e:	f1b9 0901 	subs.w	r9, r9, #1
+     742:	d1d9      	bne.n	6f8 <_ZN5hwlib18spi_bit_banged_new14write_and_readEjPKhPh+0x24>
+     744:	b10f      	cbz	r7, 74a <_ZN5hwlib18spi_bit_banged_new14write_and_readEjPKhPh+0x76>
+     746:	703d      	strb	r5, [r7, #0]
+     748:	3701      	adds	r7, #1
+     74a:	f108 0801 	add.w	r8, r8, #1
+     74e:	e7cb      	b.n	6e8 <_ZN5hwlib18spi_bit_banged_new14write_and_readEjPKhPh+0x14>
+     750:	4635      	mov	r5, r6
+     752:	e7cf      	b.n	6f4 <_ZN5hwlib18spi_bit_banged_new14write_and_readEjPKhPh+0x20>
+     754:	e8bd 8ff8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, sl, fp, pc}
