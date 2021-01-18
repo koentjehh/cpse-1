@@ -14,7 +14,7 @@ decoder:
 loop_decoder:
     ldrb r0, [ r5 ]			@ laad (zero-extended) byte uit r5 in r0
     cmp r0, #0         		
-	beq done_decoder		@ als r0 == 0 waar is roep done_decoder aan (einde van asciz) 	
+    beq done_decoder		@ als r0 == 0 waar is roep done_decoder aan (einde van asciz) 	
     cmp r0, #'@'      		
     beq match				@ als r0 == '@' codering gevonden
     bl add            
@@ -24,7 +24,7 @@ match:
     add r5, r5, #1			@ tel 1 op bij r5
     ldrb r7, [ r5 ]   		@ laad (zero-extended) byte uit r5 in r7 (int offset)
     add r5, r5, #1			@ tel 1 op bij r5
-	sub r7, r7, #'0'  		@ haal '0' weg van r7 (offset)
+    sub r7, r7, #'0'  		@ haal '0' weg van r7 (offset)
     ldrb r4, [ r5 ]			@ laad (zero-extended) byte uit r5 in r7 (int length)   
     add r5, r5, #1    		@ tel 1 op bij r5
     sub r4, r4, #'0'  		@ haal '0' weg van r7 (length)
@@ -51,7 +51,7 @@ loop_add:
     b loop_add     
 add_write:
     strb r4, [ r3 ]
-	bl print_char 			@ print chars 	
+    bl print_char 			@ print chars 	
     pop { r4, pc }			@ pop r4 (length) en pc van de stack   		
 done_decoder:
-	pop { r5, pc }			@ pop r5 (reg met asciz inhoud) en pc van de stack   	
+    pop { r5, pc }			@ pop r5 (reg met asciz inhoud) en pc van de stack   	
